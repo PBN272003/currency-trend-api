@@ -1,0 +1,34 @@
+{% extends "admin/change_list.html" %}
+{% load static %}
+
+{% block content %}
+  {{ block.super }}
+
+  {% if admincharts %}
+    <div id="admincharts">
+      <script id="adminchart-chartjs-config" type="application/json">
+        {
+          "type": "{{ admincharts.values|first.type }}",
+          "data": {
+            "labels": {{ admincharts.values|first.labels|safe }},
+            "datasets": [{
+              "label": "{{ admincharts.keys|first }}",
+              "data": {{ admincharts.values|first.values|safe }},
+              "backgroundColor": "rgba(75, 192, 192, 0.5)",
+              "borderColor": "rgba(75, 192, 192, 1)",
+              "borderWidth": 1
+            }]
+          },
+          "options": {{ admincharts.values|first.options|default:"{}"|safe }}
+        }
+      </script>
+    </div>
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  {{ block.super }}
+  <link rel="stylesheet" href="{% static 'admincharts/admincharts.css' %}">
+  <script src="{% static 'admincharts/chart.min.js' %}"></script>
+  <script src="{% static 'admincharts/admincharts.js' %}"></script>
+{% endblock %}
