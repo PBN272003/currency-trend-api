@@ -1,6 +1,13 @@
 # 💱 Currency Trend Monitoring API (Django + DRF)
 This project allows users to monitor currency exchange rate trends and get alerts via email if there's a significant change. Features are JWT authentication, rate limiting, caching, Swagger docs, Admin Dashboad for visualizing the API usage, Watchlist for getting readily available currency pair.
 
+## 📽️ Demo Video and Email Functionality
+
+Demo Video Link: https://drive.google.com/file/d/1AdvGTp9qCP6VrHinoYpgTtJ1_XvvcP5U/view?usp=sharing
+
+Email Functionality: https://drive.google.com/file/d/1NjkZdfGb4x8PB5WRI1mTN10oHALHHkSy/view?usp=sharing
+
+
 # 🚀 Features
 
 ✅ JWT Authentication for secure login & registration
