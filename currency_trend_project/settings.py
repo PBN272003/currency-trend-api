@@ -164,3 +164,14 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'priyank.naik2003@gmail.com'       
 EMAIL_HOST_PASSWORD = 'alzx txwy lttg ihct'      
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Bearer': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization',
+            'description': 'JWT Authorization header using the Bearer scheme. Example: "Bearer your_token"',
+        }
+    },
+}
