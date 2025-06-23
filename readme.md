@@ -41,9 +41,10 @@ cd currency-trend-api
 
 2. Create a virtual environment:
 
+```bash
 python -m venv env
 source env/bin/activate     # Windows: env\Scripts\activate
-
+```
 
 3. Install dependencies:
 
@@ -58,6 +59,7 @@ OPENEXCHANGE_APP_ID = "your_openexchangerates_app_id"
 
 ✅ Email SMTP Config:
 
+```bash
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -65,7 +67,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'your_email@gmail.com'
 EMAIL_HOST_PASSWORD = 'your_app_password'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
+```
 Use Gmail App Passwords if you have 2FA enabled.
 
 
@@ -163,6 +165,7 @@ Gmail SMTP for alerts
 
 # 📬 Sample API Requests & Responses
 
+```bash
 ✅ Admin Dashboard
 
 Charts visible under /admin/ for tracking the API usage and User activities.(project url)
@@ -226,7 +229,7 @@ Response:
   "rates": {
     "2024-05-01": 83.406638,
     "2024-05-02": 83.40446
-  },
+          },
   "current_rate": 86.601602
 }
 ✅ If the percent change from historical average to current rate exceeds 3%, an email alert is sent to the user.
@@ -249,4 +252,4 @@ Response:
   "base_currency": "USD",
   "target_currency": "JPY"
 }
-
+'''
