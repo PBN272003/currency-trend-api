@@ -21,7 +21,7 @@ This project allows users to monitor currency exchange rate trends and get alert
 
 
 # 📁 Folder Structure
-
+```bash
 currency_trend_project/
 ├── currency/ # App for exchange rate logic and watchlist
 ├── user/ # Custom user logic
@@ -29,7 +29,7 @@ currency_trend_project/
 ├── templates/ # (Optional) Templates folder
 ├── manage.py
 └── README.md
-
+```
 # ⚙️ Setup Instructions
 
 1. Clone the repo:
