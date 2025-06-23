@@ -161,6 +161,92 @@ OpenExchangeRates API
 
 Gmail SMTP for alerts
 
+# 📬 Sample API Requests & Responses
+
+✅ Admin Dashboard
+
+Charts visible under /admin/ for tracking the API usage and User activities.(project url)
+
+🔐 User Registration
+
+1. POST /api/register/
+
+Request:
+{
+  "username": "roman",
+  "email": "roman@example.com",
+  "password": "strongpassword123"
+}
+
+Response:
+{
+  "id": 3,
+  "username": "roman",
+  "email": "roman@example.com"
+}
 
 
+🔑 JWT Token (Login)
+
+1. POST /api/token/
+
+Request:
+{
+  "username": "roman",
+  "password": "strongpassword123"
+}
+
+Response:
+{
+  "refresh": "eyJ0eXAiOiJKV1QiLCJh...",
+  "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJI..."
+}
+
+📈 Get Currency Trend (Current Rate Only)
+
+1. GET /api/currency/trend/?base=USD&target=INR
+
+Response:
+{
+  "base": "USD",
+  "target": "INR",
+  "rate": 83.4203,
+  "date": 1750612525
+}
+
+
+📊 Get Historical + Current Rate (Triggers Email if Significant Change)
+
+1. GET /api/currency/trend/?base=USD&target=INR&start=2024-05-01&end=2024-05-02
+
+Response:
+{
+  "base": "USD",
+  "target": "INR",
+  "rates": {
+    "2024-05-01": 83.406638,
+    "2024-05-02": 83.40446
+  },
+  "current_rate": 86.601602
+}
+✅ If the percent change from historical average to current rate exceeds 3%, an email alert is sent to the user.
+
+
+🧾 Watchlist (Add Currency Pair)
+
+1. POST /api/watchlist/
+
+Request:
+{
+  "base_currency": "USD",
+  "target_currency": "JPY"
+}
+
+Response:
+{
+  "id": 5,
+  "user": 3,
+  "base_currency": "USD",
+  "target_currency": "JPY"
+}
 
